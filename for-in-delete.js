@@ -40,7 +40,12 @@
 */
 
 function showValues( obj ) {
-  //Code Here
+  let stringStuff = [];
+  for(let props in obj){
+    stringStuff.push(obj[props]);
+  }
+    stringStuff = stringStuff.join('');
+    return stringStuff;
 }
 
 
@@ -53,7 +58,14 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-//Code Here
+greaterThan10 = obj => {
+  for(let props in obj){
+    if(obj[props] > 10){
+      obj[props] = 0;
+    }
+  }
+  return obj;
+}
 
 
 
@@ -65,7 +77,12 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-//Code Here
+double = obj => {
+  for(let props in obj){
+    obj[props] = obj[props] * 2;
+  }
+  return obj;
+}
 
 
 
@@ -79,7 +96,15 @@ function showValues( obj ) {
   By the end of the for in loop, you should have a sentence, return that sentence.
 */
 
-//Code Here
+secrets = obj =>{
+  let empty = '';
+  for(let props in obj){
+    if(props[0] === 's' && props[1] === 'h'){
+      empty += obj[props];
+    }
+  }
+  return empty;
+}
 
 
 
@@ -110,7 +135,14 @@ function showValues( obj ) {
   Delete the property password and return the object.
 */
 
-//Code Here
+removePassword = obj =>{
+  for(let props in obj){
+    if(props === 'password'){
+    delete obj[props];
+    }
+  }
+  return obj;
+}
 
 
 
@@ -129,7 +161,11 @@ var deleteTheBigNumbers = {
   Write a for in loop that deletes every property from the object deleteTheBigNumbers whose value is greater than 100.
 */
 
-//Code Here
+for(let props in deleteTheBigNumbers){
+  if(deleteTheBigNumbers[props] > 100){
+    delete deleteTheBigNumbers[props];
+  }
+}
 
 
 
@@ -142,7 +178,14 @@ var deleteTheBigNumbers = {
   Return the updated object.
 */
 
-//Code Here
+startsWithK = obj =>{
+  for(let props in obj){
+    if(props[0] === 'k'){
+      delete obj[props];
+    }
+  }
+  return obj;
+}
 
 
 
@@ -157,6 +200,13 @@ var deleteTheBigNumbers = {
   (hint: the method includes() may be of use...)
 */
 
-//Code Here
+hiddenTreasure = obj =>{
+  for(let props in obj){
+    if(!obj[props].includes('treasure')){
+      delete obj[props];
+    }
+  }
+  return obj;
+}
 
 
